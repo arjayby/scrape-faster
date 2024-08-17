@@ -13,6 +13,8 @@ async function fetchScrapes(): Promise<
 }
 
 export default async function Scrapes() {
+  if (!process.env.NEXT_PUBLIC_API_URL) return;
+
   const scrapes = await fetchScrapes();
 
   return (

@@ -24,6 +24,8 @@ export default async function ScrapeDetails({
 }: {
   params: { id: string };
 }) {
+  if (!process.env.NEXT_PUBLIC_API_URL) return;
+
   const scrapeDetails = await fetchScrapeDetails(params.id);
 
   if (!scrapeDetails) notFound();
