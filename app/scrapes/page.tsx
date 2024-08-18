@@ -4,6 +4,8 @@ import Card from '@/components/Card'
 
 import { ScrapeDetailsType } from './[id]/page'
 
+export const revalidate = 60;
+
 async function fetchScrapes(): Promise<
   { data: ScrapeDetailsType[] } | undefined
 > {
